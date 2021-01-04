@@ -39,8 +39,14 @@ namespace SeleniumCSharpSample
             {
                 driver.Navigate().GoToUrl(tbxURL.Text);
 
-                IWebElement element = driver.FindElement(By.CssSelector("#__next > div.home-page > main > div:nth-child(3) > ul > li:nth-child(1)"));
+                //IWebElement element = driver.FindElement(By.CssSelector("#__next > div.home-page > main > div:nth-child(3) > ul > li:nth-child(1)"));
+                //element.Click();
+
+                // Click vào phần tử đường link có chứa text
+                IWebElement element = driver.FindElement(By.PartialLinkText("máy lọc không")); //máy lọc không khí
                 element.Click();
+
+                Thread.Sleep(10000);
             }
         }
     }
