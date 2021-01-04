@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,6 +38,9 @@ namespace SeleniumCSharpSample
             using (IWebDriver driver = new ChromeDriver())
             {
                 driver.Navigate().GoToUrl(tbxURL.Text);
+
+                IWebElement element = driver.FindElement(By.CssSelector("#__next > div.home-page > main > div:nth-child(3) > ul > li:nth-child(1)"));
+                element.Click();
             }
         }
     }
